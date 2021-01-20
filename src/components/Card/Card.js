@@ -11,14 +11,6 @@ export default function CardElement (props) {
       <Card.Title>{props.title}</Card.Title>
         {props.children}
       </Card.Body>
-      <Card.Body>
-        <ButtonGroup>
-        {props.buttons.map(button => (
-          <Button variant={'primary'} href={button.href} onClick={button.onClick}>{button.text}</Button>
-          )
-        )}
-        </ButtonGroup>
-      </Card.Body>
     </Card>
   )
 }
