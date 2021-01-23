@@ -1,6 +1,6 @@
 import ROUTES, { RenderRoutes } from './router/routes';
 import './css/my-theme.css';
-import Header from './components/Header';
+import Header from './components/core/Header';
 import Container from 'react-bootstrap/Container';
 
 function App() {

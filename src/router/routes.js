@@ -1,10 +1,6 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom';
-import Home from '../screens/Home';
-import Login from '../screens/Login';
-import UserHome from '../screens/UserHome'
-import Decks from '../screens/Decks'
-import NotFound from '../screens/NotFound';
+import {Home, Login, Deck, NotFound, Subjects} from '../components/screens';
 
 const ROUTES =  [
   {
@@ -19,10 +15,10 @@ const ROUTES =  [
     component: RenderRoutes,
     routes:[
       {
-        path: '/app', key: 'HOME', exact: true, component: () => <UserHome />
+        path: '/app/decks', key: 'DECKS', exact: true, component: () => <Deck />
       },
       {
-        path: '/app/decks', key: 'DECKS', exact: true, component: () => <Decks />
+        path: '/app/subjects', key: 'SUBJECTS', exact: true, component: () => <Subjects />
       }
       
     ]
