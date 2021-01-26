@@ -1,8 +1,17 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
+import ThemeProvider from "react-bootstrap/ThemeProvider";
 import PropTypes from "prop-types";
+import parse from "react-html-parser";
+import "./styles.scss";
 
-export default function CardElement({ variant, size, title, children }) {
+export default function CardElement({
+  variant,
+  size,
+  title,
+  children,
+  htmlContent,
+}) {
   let bg = "light";
   let text = "dark";
   let width = "100%";
@@ -19,12 +28,16 @@ export default function CardElement({ variant, size, title, children }) {
   }
 
   return (
-    <Card bg={bg} style={{ width, height }} text={text}>
-      <Card.Body>
-        {title ? <Card.Title>{title}</Card.Title> : null}
-        {children}
-      </Card.Body>
-    </Card>
+    <ThemeProvider
+      prefixes={{ card: "cust-card", "card-body": "cust-card-body" }}
+    >
+      <Card bg={bg} style={{ width, height }} text={text}>
+        <Card.Body>
+          {title ? <Card.Title>{title}</Card.Title> : null}
+          {htmlContent ? parse(htmlContent) : { children }}
+        </Card.Body>
+      </Card>
+    </ThemeProvider>
   );
 }
 
