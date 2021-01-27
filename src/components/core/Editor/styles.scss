@@ -1,0 +1,15 @@
+@import "./../../../styles/scss/theme/variables.scss";
+.wrapper-class {
+  padding: 1rem;
+  border: 1px solid $primary;
+}
+
+.editor-class {
+  background-color: $white;
+  padding: 1rem;
+  border: 1px solid $secondary;
+}
+
+.toolbar-class {
+  border: 1px solid $info;
+}

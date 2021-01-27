@@ -1,25 +1,26 @@
 import React from "react";
-import { Card, Grid } from "../../core";
+import { CardThumbnail, Grid, SectionHeader } from "../../core";
 
 import PropTypes from "prop-types";
 
 const mock = {
   cards: [
     {
-      text: "card 1",
-      htmlContent: '<div class="center"><h3>I am html</h3></div>',
+      name: "days of the week",
+      title: "days of the week aaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    },
+    {
+      text: "months of the year",
+      title:
+        "this is a very long title that has no meaning but someone could write it who knows",
+    },
+    {
+      text: "colors",
+      title: "colors",
     },
     {
       text: "card 1",
-      htmlContent: '<div class="center"><h3>I am html</h3></div>',
-    },
-    {
-      text: "card 1",
-      htmlContent: '<div class="center"><h3>I am html</h3></div>',
-    },
-    {
-      text: "card 1",
-      htmlContent: '<div class="center"><h3>I am html</h3></div>',
+      title: "I am html",
     },
   ],
 };
@@ -27,14 +28,15 @@ const mock = {
 function Subjects(props) {
   return (
     <div>
-      <h1 className="display-4">Subjects</h1>
+      <SectionHeader title="Subjects" />
       <Grid
         items={mock.cards.map((card, index) => {
           return (
-            <Card
+            <CardThumbnail
               key={index}
               variant={"title-card"}
               size={"thumbnail"}
+              title={card.title}
               htmlContent={card.htmlContent}
             />
           );

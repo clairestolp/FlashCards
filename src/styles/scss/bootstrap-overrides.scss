@@ -1,5 +1,2 @@
-$primary: #80cbc4;
-$secondary: #424242;
-$info: #ba68c8;
-
-@import "../node_modules/bootstrap/scss/bootstrap";
+@import "./theme/variables.scss";
+@import "../../../node_modules/bootstrap/scss/bootstrap";

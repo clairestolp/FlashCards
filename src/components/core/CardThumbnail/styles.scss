@@ -1,0 +1,27 @@
+@import "./../../../styles/scss/theme/utils.scss";
+@import "./../../../styles/scss/theme/variables.scss";
+$cardHeight: 9rem;
+$cardWidth: 18rem;
+$padding: 1.25rem;
+
+.cust-card {
+  border-radius: 0;
+  position: relative;
+  width: $cardWidth;
+  height: $cardHeight;
+  @include overflow;
+  & h3 {
+    @include overflow;
+    @include absolute-center;
+    height: 3rem;
+    width: getLength($padding, $cardWidth);
+    text-align: center;
+  }
+}
+
+.cust-card-body {
+  display: flex;
+  flex: 1 1 auto;
+  height: 100%;
+  padding: 1.25rem;
+}
