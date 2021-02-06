@@ -4,7 +4,7 @@ import classNames from "classnames";
 
 function SectionHeader({ title }) {
   return (
-    <div>
+    <div style={{ marginBottom: "1rem" }}>
       <p className={classNames("display-4")}>{title}</p>
       <hr />
     </div>

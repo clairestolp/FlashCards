@@ -22,15 +22,8 @@ export default function CardElement({
     text = "white";
   }
 
-  if (size === "thumbnail") {
-    width = "18rem";
-    height = "9rem";
-  }
-
   return (
-    <ThemeProvider
-      prefixes={{ card: "cust-card", "card-body": "cust-card-body" }}
-    >
+    <ThemeProvider prefixes={{ card: "cust-card" }}>
       <Card bg={bg} style={{ width, height }} text={text}>
         <Card.Body>
           {title ? <Card.Title>{title}</Card.Title> : null}
