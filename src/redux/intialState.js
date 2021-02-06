@@ -5,9 +5,11 @@ const initialState = {
       first: undefined,
       last: undefined,
     },
-    email: undefined
+    email: undefined,
+    isFetching: false,
+    error: undefined,
   },
   decks: [],
-}
+};
 
 export default initialState;
