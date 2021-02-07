@@ -9,7 +9,11 @@ const initialState = {
     isFetching: false,
     error: undefined,
   },
-  decks: [],
+  subjects: {
+    subjects: [],
+    isFetching: false,
+    error: false,
+  },
 };
 
 export default initialState;

@@ -8,7 +8,7 @@ function Grid({ items, itemsPerRow = 3 }) {
   const renderRows = (items, itemsPerRow) => {
     const rowArray = [];
     let colArray = [];
-    items.forEach((item, index) => {
+    items?.forEach((item, index) => {
       const count = ++index;
       colArray.push(
         <Col key={`item-${index}`}>

@@ -17,7 +17,7 @@ const userReducer = (state = initialState.user, action) => {
     case LOGIN_FAILURE:
       return { ...state, isFetching: false, error: action.error };
     default:
-      return state;
+      return { ...state };
   }
 };
 

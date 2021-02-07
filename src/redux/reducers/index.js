@@ -1,11 +1,11 @@
-import {combineReducers} from 'redux';
+import { combineReducers } from "redux";
 
-import userReducer from './user';
-import decksReducer from './decks';
+import userReducer from "./user";
+import subjectsReducer from "./subjects";
 
 const rootReducer = combineReducers({
   user: userReducer,
-  decks: decksReducer,
-})
+  subjects: subjectsReducer,
+});
 
 export default rootReducer;

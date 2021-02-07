@@ -21,3 +21,20 @@ export const getUser = (email) => {
       throw error;
     });
 };
+
+export const getSubjects = (userId) => {
+  return axios
+    .get(`${domain}/subjects/${userId}`)
+    .then((response) => {
+      return response.data.map((subject) => ({
+        id: subject._id,
+        name: subject.name,
+        description: subject.description,
+        createdAt: subject.createdAt,
+        updatedAt: subject.updatedAt,
+      }));
+    })
+    .catch((error) => {
+      throw error;
+    });
+};
