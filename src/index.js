@@ -6,15 +6,18 @@ import { BrowserRouter } from "react-router-dom";
 import configureStore from "./redux/configureStore";
 import initialState from "./redux/intialState";
 import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 require("dotenv").config();
 
-const store = configureStore(initialState);
+const { store, persistor } = configureStore(initialState);
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
-        <App />
+        <PersistGate loading={null} persistor={persistor}>
+          <App />
+        </PersistGate>
       </Provider>
     </BrowserRouter>
   </React.StrictMode>,

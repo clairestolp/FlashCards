@@ -5,7 +5,6 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 function Header(props) {
-  console.log(props.user);
   return (
     <Navbar bg={"primary"}>
       <Navbar.Brand href="/">Home</Navbar.Brand>

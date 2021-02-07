@@ -5,28 +5,6 @@ import actions from "../../../redux/actions";
 
 import PropTypes from "prop-types";
 
-const mock = {
-  cards: [
-    {
-      name: "days of the week",
-      title: "days of the week aaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-    },
-    {
-      text: "months of the year",
-      title:
-        "this is a very long title that has no meaning but someone could write it who knows",
-    },
-    {
-      text: "colors",
-      title: "colors",
-    },
-    {
-      text: "card 1",
-      title: "I am html",
-    },
-  ],
-};
-
 class Subjects extends Component {
   constructor(props) {
     super(props);
@@ -39,9 +17,9 @@ class Subjects extends Component {
   render() {
     return (
       <div>
-        {this.props.subjects?.map((subject) => {
+        {this.props.subjects?.map((subject, index) => {
           return (
-            <>
+            <div key={subject.name + index}>
               <SectionHeader title={subject.name} />
               <Grid
                 items={subject.decks?.map((deck, index) => {
@@ -55,7 +33,7 @@ class Subjects extends Component {
                   );
                 })}
               />
-            </>
+            </div>
           );
         })}
       </div>

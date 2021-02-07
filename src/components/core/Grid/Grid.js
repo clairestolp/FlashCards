@@ -4,7 +4,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "./../../../styles/scss/theme/utils.scss";
 
-function Grid({ items, itemsPerRow = 3 }) {
+function Grid({ items = [], itemsPerRow = 3 }) {
   const renderRows = (items, itemsPerRow) => {
     const rowArray = [];
     let colArray = [];
@@ -29,7 +29,7 @@ function Grid({ items, itemsPerRow = 3 }) {
 }
 
 Grid.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.element).isRequired,
+  items: PropTypes.arrayOf(PropTypes.element),
   itemsPerRow: PropTypes.number,
 };
 
