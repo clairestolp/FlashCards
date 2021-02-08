@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { CardThumbnail, Grid, SectionHeader } from "../../core";
 import { connect } from "react-redux";
 import actions from "../../../redux/actions";
-
+import { BiPlus } from "react-icons/bi";
 import PropTypes from "prop-types";
 
 class Subjects extends Component {
@@ -21,6 +21,9 @@ class Subjects extends Component {
           return (
             <div key={subject.name + index}>
               <SectionHeader title={subject.name} />
+              <h3>
+                <BiPlus />
+              </h3>
               <Grid
                 items={subject.decks?.map((deck, index) => {
                   return (
@@ -36,6 +39,9 @@ class Subjects extends Component {
             </div>
           );
         })}
+        <h1 className={"position-absolute bottom-0 end-0 p-3"}>
+          <BiPlus />
+        </h1>
       </div>
     );
   }

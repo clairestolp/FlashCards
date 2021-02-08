@@ -30,6 +30,7 @@ export const getSubjects = (userId) => {
         id: subject._id,
         name: subject.name,
         description: subject.description,
+        decks: subject.decks,
         createdAt: subject.createdAt,
         updatedAt: subject.updatedAt,
       }));
